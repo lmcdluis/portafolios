@@ -1,25 +1,33 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import {Route, Switch, Redirect, BrowserRouter} from 'react-router-dom';
+import {Spinner} from 'react-bootstrap';
+import Routes from './routes';
 
-function App() {
+const HomePage = React.lazy(() => import('./pages/home/index'));
+const ErrorPage = React.lazy(() => import ('./pages/error/index'));
+export const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <BrowserRouter>
+      <div className="App">
+      <React.Suspense
+              fallback={
+                <div className="spinner-show text-center">
+                  <Spinner
+                    animation="grow"
+                    variant="primary"
+                    className="mx-auto"
+                  />
+                </div>
+              }>
+                 <Switch>
+        <Route path={Routes.home} exact component={HomePage}></Route>
+        <Route path={Routes.home} exact component={ErrorPage}></Route>
+        <Redirect to={Routes.home} />
+      </Switch>
+      </React.Suspense>
     </div>
+    </BrowserRouter>
   );
 }
 
