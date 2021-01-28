@@ -1,9 +1,12 @@
 import React from 'react';
 import './style.css';
-import { Container, Row, Col, Button } from 'react-bootstrap';
+import { Container, Row, Col} from 'react-bootstrap';
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 import {faLinkedin, faFacebookSquare, faInstagram} from '@fortawesome/free-brands-svg-icons';
 import AOS from 'aos';
+import Footer from '../../components/footer';
+import CvInformation from '../../components/cv-information';
+import { cvData } from '../../components/cv-information/pay-load';
 
 const linkedinUrl = 'https://www.linkedin.com/in/luis-manuel-carazo-d%C3%A1vila-80a6a0153/';
 const mailAction = 'mailTo:carazodesign@gmail.com';
@@ -14,7 +17,7 @@ export const Home = () =>  {
         <section>
         <Container fluid>
             <Row>
-            <Col md={4} className="home-side-col sticky-top" data-aos={'fade-right'}>
+            <Col lg={4} md={12} xs={12} className="home-side-col" data-aos={'fade-right'}>
                 <div className="home-side-content">
                     <h1 className="text-secondary font-weight-bold">Diseñador UI/UX,<br/>Desarrollador Front-End,<br/>Soñador y<br/>Amante a la música</h1>
                 </div>
@@ -32,10 +35,18 @@ export const Home = () =>  {
                     <Col xs={12}><a href={mailAction} className="btn btn-primary  btn-block btn-lg rounded-pill">Contáctame</a></Col>
                 </Row>
             </Col>
-            <Col md={8} className="m-0 p-0">
-               <section className="side-scroll section-1"></section>
-               <section className="side-scroll section-2"></section>
-               <section className="side-scroll section-3"></section>
+            <Col lg={8} md={12} xs={12} className="m-0 p-0">
+                   {cvData.map((project)=>(
+                       <CvInformation
+                       key={project.title}
+                       image={project.image}
+                       title={project.title}
+                       numberPage={project.numberPage}
+                       className={project.className}
+                       description={project.description}
+                       ></CvInformation>
+                   ))}
+                   <Footer className="footer-site"></Footer>
             </Col>
             </Row>
         </Container>

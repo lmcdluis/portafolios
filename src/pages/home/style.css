@@ -1,12 +1,13 @@
 .home-side-col{
-    height: 100vh;
     background-color: #eee;
-    padding: 1.5rem;
+    padding: 3rem 1.5rem;
+    height: 100vh;
+    position: sticky;
+    top: 0;
+    z-index: 1020;
 }
 
-.home-side-content{
-    margin-top: 8rem;
-}
+
 
 .social-icons a {
     color: #6c757d;
@@ -16,18 +17,46 @@
     color: #ababab;
 }
 
-.side-scroll{
-    height: 90vh;
-}
 
 .section-1{
-    background-color: #ee3733;
+    background-color:#005ba9;
 }
 
 .section-2{
-    background-color: #0461a2;
+    background-color: #ee3733;
 }
 
 .section-3{
-    background-color: #93c14c;
+    background-color: #0461a2;
+}
+
+.section-4{
+background-color: #93c14c;
+}
+
+.footer-site{
+    color: #fff;
+}
+
+.description-project, .title-project{
+    margin-left: 3rem;
+}
+
+@media (max-width: 1024px){
+.home-side-col{
+        position: unset;
+
+    }
+
+    .home-side-col{
+        height: auto;
+    }
+
+    .description-project{
+        margin-left: 0.25rem;
+    }
+}
+
+@media screen and (max-width: 414px) {
+    
 }
