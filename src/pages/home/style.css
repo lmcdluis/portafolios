@@ -19,11 +19,11 @@
 
 
 .section-1{
-    background-color:#005ba9;
+    background-color:#A81811;
 }
 
 .section-2{
-    background-color: #ee3733;
+    background-color: #9EA822;
 }
 
 .section-3{
@@ -31,8 +31,28 @@
 }
 
 .section-4{
-background-color: #93c14c;
+background-color: #f4b93d;
 }
+
+.section-5{
+background-color:#3991ED;
+    }
+
+.section-6{
+background-color: #11A84A;
+        }
+
+.section-7{
+background-color: #00A89F;
+}
+
+.section-8{
+background-color:#A89022;
+    }
+
+.section-9{
+background-color:#DB4B00;
+        }
 
 .footer-site{
     color: #fff;

@@ -24,7 +24,7 @@ export const CvInformation = (props: InformationProps) => {
                     </div>
                 </Row>
                 <Row>
-                    <Col md={8} className="mx-auto">
+                    <Col md={10} className="mx-auto">
                         <img src={props.image} className="img-fluid"></img>
                     </Col>
                 </Row>
