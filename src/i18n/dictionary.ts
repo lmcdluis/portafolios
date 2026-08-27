@@ -74,6 +74,9 @@ export const dictionary: Record<string, Entry> = {
   'contact.project': { es: 'El proyecto', en: 'The project' },
   'contact.project.ph': { es: 'Dos líneas bastan.', en: 'Two lines are enough.' },
   'contact.send':    { es: 'Enviar mensaje', en: 'Send message' },
+  'contact.sending': { es: 'Enviando…', en: 'Sending…' },
+  'contact.success': { es: '¡Mensaje enviado! Te responderé pronto.', en: 'Message sent! I will reply soon.' },
+  'contact.error':   { es: 'Algo falló. Intenta de nuevo o escríbeme directo.', en: 'Something failed. Try again or email me directly.' },
 
   'footer.portfolio':{ es: 'Portafolio', en: 'Portfolio' },
   'footer.made':     { es: 'Diseñado en Figma, construido en React + Bootstrap.', en: 'Designed in Figma, built in React + Bootstrap.' }
