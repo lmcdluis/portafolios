@@ -1,18 +1,20 @@
 {
   "files": {
     "main.css": "/portafolios/static/css/main.be5fb647.chunk.css",
-    "main.js": "/portafolios/static/js/main.9421a538.chunk.js",
-    "main.js.map": "/portafolios/static/js/main.9421a538.chunk.js.map",
-    "runtime-main.js": "/portafolios/static/js/runtime-main.85061895.js",
-    "runtime-main.js.map": "/portafolios/static/js/runtime-main.85061895.js.map",
+    "main.js": "/portafolios/static/js/main.d8c18ca7.chunk.js",
+    "main.js.map": "/portafolios/static/js/main.d8c18ca7.chunk.js.map",
+    "runtime-main.js": "/portafolios/static/js/runtime-main.a1256181.js",
+    "runtime-main.js.map": "/portafolios/static/js/runtime-main.a1256181.js.map",
     "static/js/2.a0fd5334.chunk.js": "/portafolios/static/js/2.a0fd5334.chunk.js",
     "static/js/2.a0fd5334.chunk.js.map": "/portafolios/static/js/2.a0fd5334.chunk.js.map",
-    "static/js/3.051ddb80.chunk.js": "/portafolios/static/js/3.051ddb80.chunk.js",
-    "static/js/3.051ddb80.chunk.js.map": "/portafolios/static/js/3.051ddb80.chunk.js.map",
-    "static/js/4.fedf7872.chunk.js": "/portafolios/static/js/4.fedf7872.chunk.js",
-    "static/js/4.fedf7872.chunk.js.map": "/portafolios/static/js/4.fedf7872.chunk.js.map",
-    "static/js/5.6d612d0c.chunk.js": "/portafolios/static/js/5.6d612d0c.chunk.js",
-    "static/js/5.6d612d0c.chunk.js.map": "/portafolios/static/js/5.6d612d0c.chunk.js.map",
+    "static/js/3.91e897bd.chunk.js": "/portafolios/static/js/3.91e897bd.chunk.js",
+    "static/js/3.91e897bd.chunk.js.map": "/portafolios/static/js/3.91e897bd.chunk.js.map",
+    "static/js/4.1cf1e723.chunk.js": "/portafolios/static/js/4.1cf1e723.chunk.js",
+    "static/js/4.1cf1e723.chunk.js.map": "/portafolios/static/js/4.1cf1e723.chunk.js.map",
+    "static/js/5.23d9dcdd.chunk.js": "/portafolios/static/js/5.23d9dcdd.chunk.js",
+    "static/js/5.23d9dcdd.chunk.js.map": "/portafolios/static/js/5.23d9dcdd.chunk.js.map",
+    "static/js/6.a8999892.chunk.js": "/portafolios/static/js/6.a8999892.chunk.js",
+    "static/js/6.a8999892.chunk.js.map": "/portafolios/static/js/6.a8999892.chunk.js.map",
     "index.html": "/portafolios/index.html",
     "static/css/main.be5fb647.chunk.css.map": "/portafolios/static/css/main.be5fb647.chunk.css.map",
     "static/js/2.a0fd5334.chunk.js.LICENSE.txt": "/portafolios/static/js/2.a0fd5334.chunk.js.LICENSE.txt",
@@ -27,9 +29,9 @@
     "static/media/servimax-ca-all.b5a0303b.png": "/portafolios/static/media/servimax-ca-all.b5a0303b.png"
   },
   "entrypoints": [
-    "static/js/runtime-main.85061895.js",
+    "static/js/runtime-main.a1256181.js",
     "static/js/2.a0fd5334.chunk.js",
     "static/css/main.be5fb647.chunk.css",
-    "static/js/main.9421a538.chunk.js"
+    "static/js/main.d8c18ca7.chunk.js"
   ]
 }

@@ -1,0 +1,2 @@
+(this.webpackJsonpportafolios=this.webpackJsonpportafolios||[]).push([[4],{43:function(r,t,n){"use strict";n.r(t),n.d(t,"Error",(function(){return e}));var o=n(3),e=(n(0),function(){return Object(o.jsx)(o.Fragment,{children:Object(o.jsx)("h1",{children:"P\xe1gina de Error"})})});t.default=e}}]);
+//# sourceMappingURL=4.1cf1e723.chunk.js.map
