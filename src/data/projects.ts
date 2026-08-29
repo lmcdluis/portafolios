@@ -10,18 +10,29 @@ import credexWeb from '../assets/images/projects/credex-web.png';
 import { Lang } from '../i18n/dictionary';
 
 export type Category = 'movil' | 'web';
-type Bilingual = Record<Lang, string>;
+export type Tech = 'Figma' | 'Adobe XD' | 'iOS' | 'Android' | 'Web';
+export type Bilingual = Record<Lang, string>;
+
+export interface CaseSection {
+  heading: Bilingual;
+  body: Bilingual;
+}
 
 export interface Project {
   id: string;
   num: string;
   title: string;
   category: Category;
+  techs: Tech[];
   platform: Bilingual;
   image: string;
   description: Bilingual;
   tags: Bilingual[];
+  /** Omit until the write-up exists — the dialog then shows an honest "in progress" state. */
+  caseStudy?: CaseSection[];
 }
+
+export const TECHS: Tech[] = ['Figma', 'Adobe XD', 'iOS', 'Android', 'Web'];
 
 export const projects: Project[] = [
   {
@@ -29,6 +40,7 @@ export const projects: Project[] = [
     num: '01',
     title: 'CREDEX MÓVIL / ZÜ MÓVIL',
     category: 'movil',
+    techs: ['Figma', 'iOS', 'Android'],
     platform: { es: 'iOS · Android', en: 'iOS · Android' },
     image: credexMobile,
     description: {
@@ -37,7 +49,31 @@ export const projects: Project[] = [
     },
     tags: [
       { es: 'Rediseño', en: 'Redesign' },
-      { es: 'Banca de consumo', en: 'Consumer finance' }
+      { es: 'Banca de consumo', en: 'Consumer finance' },
+      { es: 'Figma', en: 'Figma' }
+    ],
+    caseStudy: [
+      {
+        heading: { es: 'El punto de partida', en: 'The starting point' },
+        body: {
+          es: 'La app existía y se usaba, pero el recorrido no acompañaba a quien la abría por primera vez. Analicé la usabilidad de las pantallas en producción para entender dónde se atascaba el usuario final.',
+          en: 'The app already existed and was in use, but the journey did not support a first-time user. I analysed the usability of the production screens to find where the end user got stuck.'
+        }
+      },
+      {
+        heading: { es: 'Qué hice', en: 'What I did' },
+        body: {
+          es: 'Rediseñé las pantallas donde la fricción era mayor y agregué elementos que antes no existían: los estados y las señales que faltaban para que el usuario supiera dónde estaba y qué seguía. El objetivo era uno solo — hacerlo más fácil para el usuario final.',
+          en: 'I redesigned the screens with the most friction and added elements that were not there before: the missing states and signals that tell the user where they are and what comes next. The goal was singular — make it easier for the end user.'
+        }
+      },
+      {
+        heading: { es: 'Cómo se entregó', en: 'How it shipped' },
+        body: {
+          es: 'El rediseño salió a producción en Android e iOS, y la misma base sirvió para Credex en Nicaragua y Zü en Guatemala: dos marcas sobre un mismo sistema de pantallas.',
+          en: 'The redesign shipped to production on Android and iOS, and the same base served Credex in Nicaragua and Zü in Guatemala: two brands on one screen system.'
+        }
+      }
     ]
   },
   {
@@ -45,6 +81,7 @@ export const projects: Project[] = [
     num: '02',
     title: 'CASHMAX',
     category: 'movil',
+    techs: ['Figma', 'Android'],
     platform: { es: 'Android', en: 'Android' },
     image: cashMax,
     description: {
@@ -61,6 +98,7 @@ export const projects: Project[] = [
     num: '03',
     title: 'CROPS',
     category: 'web',
+    techs: ['Adobe XD', 'Web'],
     platform: { es: 'Web', en: 'Web' },
     image: crops,
     description: {
@@ -77,6 +115,7 @@ export const projects: Project[] = [
     num: '04',
     title: 'SERVIMAX CA',
     category: 'movil',
+    techs: ['Figma', 'Android'],
     platform: { es: 'Android', en: 'Android' },
     image: serviMax,
     description: {
@@ -93,6 +132,7 @@ export const projects: Project[] = [
     num: '05',
     title: 'POS · EXTRAGARANTÍA',
     category: 'web',
+    techs: ['Adobe XD', 'Web'],
     platform: { es: 'Web', en: 'Web' },
     image: pos,
     description: {
@@ -109,6 +149,7 @@ export const projects: Project[] = [
     num: '06',
     title: 'IBO · OPORTUNIDADES',
     category: 'web',
+    techs: ['Figma', 'Web'],
     platform: { es: 'Web', en: 'Web' },
     image: ibo,
     description: {
@@ -125,6 +166,7 @@ export const projects: Project[] = [
     num: '07',
     title: 'CCN · CAMPAÑAS',
     category: 'web',
+    techs: ['Figma', 'Web'],
     platform: { es: 'Propuesta', en: 'Proposal' },
     image: ccn,
     description: {
@@ -141,6 +183,7 @@ export const projects: Project[] = [
     num: '08',
     title: 'APEX · ALTA BMS',
     category: 'web',
+    techs: ['Figma', 'Web'],
     platform: { es: 'US · EU', en: 'US · EU' },
     image: apex,
     description: {
@@ -157,6 +200,7 @@ export const projects: Project[] = [
     num: '09',
     title: 'SITIO WEB CREDEX / ZÜ',
     category: 'web',
+    techs: ['Figma', 'Web'],
     platform: { es: 'Sitio público', en: 'Public site' },
     image: credexWeb,
     description: {

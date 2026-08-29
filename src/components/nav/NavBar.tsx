@@ -1,36 +1,48 @@
 import React from 'react';
 import { Container } from 'react-bootstrap';
 import GlassPanel from '../glass/GlassPanel';
+import ThemeToggle from './ThemeToggle';
 import { useLang } from '../../i18n/LangContext';
+import useScrollSpy from '../../hooks/useScrollSpy';
 import { Lang } from '../../i18n/dictionary';
 
 const links = [
-  { href: '#trabajo', key: 'nav.work' },
-  { href: '#capacidades', key: 'nav.skills' },
-  { href: '#sistema', key: 'nav.system' },
-  { href: '#voces', key: 'nav.voices' }
+  { id: 'trabajo', key: 'nav.work' },
+  { id: 'capacidades', key: 'nav.skills' },
+  { id: 'sistema', key: 'nav.system' },
+  { id: 'voces', key: 'nav.voices' }
 ];
+
+const sectionIds = links.map((link) => link.id);
 
 export const NavBar: React.FC = () => {
   const { lang, setLang, t } = useLang();
+  const active = useScrollSpy(sectionIds);
   const options: Lang[] = ['es', 'en'];
 
   return (
     <header className="site-nav">
       <Container>
-        <GlassPanel variant="pill" className="site-nav__bar">
-          <a href="#top" className="site-nav__brand">
+        <GlassPanel className="site-nav__bar">
+          <a href="#top" className="site-nav__brand" data-magnet>
             <span className="h4 mb-0">LUIS CARAZO</span>
-            <span className="kicker">UI/UX · FRONT-END</span>
+            <span className="kicker site-nav__brand-kicker">UI/UX · FRONT-END</span>
           </a>
 
-          <nav className="d-none d-lg-flex align-items-center" style={{ gap: '1.5rem' }}>
+          <nav className="site-nav__links">
             {links.map((link) => (
-              <a key={link.href} href={link.href} className="site-nav__link">
+              <a
+                key={link.id}
+                href={'#' + link.id}
+                className={'site-nav__link' + (active === link.id ? ' is-active' : '')}
+                aria-current={active === link.id ? 'true' : undefined}
+              >
                 {t(link.key)}
               </a>
             ))}
           </nav>
+
+          <ThemeToggle />
 
           <div className="switch" role="group" aria-label="Language">
             {options.map((option) => (
@@ -46,7 +58,7 @@ export const NavBar: React.FC = () => {
             ))}
           </div>
 
-          <a href="#contacto" className="btn btn-glass-primary d-none d-md-inline-flex">
+          <a href="#contacto" className="btn btn-accent site-nav__cta d-none d-md-inline-flex" data-magnet>
             {t('nav.cta')}
           </a>
         </GlassPanel>

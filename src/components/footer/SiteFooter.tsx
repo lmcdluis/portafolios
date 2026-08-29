@@ -9,10 +9,10 @@ export const SiteFooter: React.FC = () => {
     <footer className="pb-5">
       <Container>
         <div
-          className="d-flex flex-wrap justify-content-between align-items-center text-dimmer"
-          style={{ gap: '1.25rem', fontSize: '0.75rem' }}
+          className="d-flex flex-wrap justify-content-between align-items-center text-dimmer pt-4"
+          style={{ gap: '1.25rem', fontSize: '0.75rem', borderTop: '2px solid var(--rule)' }}
         >
-          <span style={{ fontFamily: "'Barlow Condensed', sans-serif", letterSpacing: '0.16em', textTransform: 'uppercase' }}>
+          <span style={{ fontWeight: 700, letterSpacing: '0.16em', textTransform: 'uppercase' }}>
             Luis Carazo · {t('footer.portfolio')} 2026
           </span>
           <span>{t('footer.made')}</span>

@@ -1,8 +1,10 @@
 // ─────────────────────────────────────────────────────────────
-// Design tokens — Liquid Glass over the Industry steel palette.
+// Industry tokens — Liquid Glass on the steel-blue palette.
 // Imported BEFORE bootstrap so the $-variables override it.
+// Dark steel ground by default; light is the alternate theme.
 // ─────────────────────────────────────────────────────────────
 
+// Steel ramp
 $steel-900: #0d151c;
 $steel-800: #1d2d3d;
 $steel-700: #2c455d;
@@ -17,6 +19,7 @@ $steel-100: #eef6ff;
 $primary:                 $steel-300;
 $secondary:               $steel-600;
 $dark:                    $steel-900;
+$light:                   $steel-100;
 $body-bg:                 $steel-900;
 $body-color:              $steel-100;
 $font-family-sans-serif:  'Barlow', system-ui, -apple-system, sans-serif;
@@ -28,6 +31,7 @@ $line-height-base:        1.6;
 $border-radius:           0.875rem;
 $border-radius-lg:        1.5rem;
 $border-radius-sm:        0.625rem;
+$border-width:            1px;
 $link-color:              $steel-300;
 $link-hover-color:        $steel-100;
 $link-hover-decoration:   none;
@@ -45,18 +49,61 @@ $grid-gutter-width:       1.5rem;
   --steel-200: #{$steel-200};
   --steel-100: #{$steel-100};
 
-  // The single knob for glass intensity (0-100 maps to 8-42px upstream).
+  // ── semantic roles, swapped wholesale by [data-theme] ──────
+  --bg:      #{$steel-900};
+  --txt:     #{$steel-100};
+  --txt-2:   rgba(238, 246, 255, 0.72);
+  --txt-3:   rgba(238, 246, 255, 0.5);
+  --acc:     #{$steel-300};   // fills, display type, focus ring
+  --acc-txt: #{$steel-300};   // accent at paragraph size
+  --acc-deep:#{$steel-500};   // the low end of the skill-bar gradient
+  --acc-tint: rgba(89, 128, 166, 0.2);
+
+  // the glass material
+  --glass-a: rgba(255, 255, 255, 0.15);
+  --glass-b: rgba(255, 255, 255, 0.04);
   --glass-blur: 38px;
   --glass-sat: 1.8;
 
-  --glass-tint-a: rgba(255, 255, 255, 0.15);
-  --glass-tint-b: rgba(255, 255, 255, 0.04);
-  --glass-edge:   rgba(255, 255, 255, 0.18);
-  --glass-inner:  rgba(255, 255, 255, 0.34);
-  --glass-drop:   0 26px 50px -30px rgba(0, 0, 0, 0.7);
-  --glass-drop-lg: 0 40px 80px -40px rgba(0, 0, 0, 0.8);
+  --edge:      rgba(255, 255, 255, 0.18);
+  --inner:     rgba(255, 255, 255, 0.34);   // the glossy top highlight
+  --drop:      0 26px 50px -30px rgba(0, 0, 0, 0.7);
+  --drop-lg:   0 40px 80px -40px rgba(0, 0, 0, 0.8);
+  --rule:      rgba(238, 246, 255, 0.16);
+  --chip:      rgba(255, 255, 255, 0.08);
+  --chip-edge: rgba(255, 255, 255, 0.16);
+  --inset:     rgba(13, 21, 28, 0.28);
+  --plate:     rgba(255, 255, 255, 0.92);   // the ground a screenshot sits on
+  --field-op:  1;                           // ambient field opacity
+  --scrim:     rgba(6, 11, 15, 0.72);
 
   --ease-soft: cubic-bezier(0.22, 1, 0.36, 1);
   --dur-reveal: 900ms;
   --dur-hover: 350ms;
+}
+
+[data-theme='light'] {
+  --bg:      #e6ecf2;
+  --txt:     #14202c;
+  --txt-2:   rgba(20, 32, 44, 0.74);
+  --txt-3:   rgba(20, 32, 44, 0.52);
+  --acc:     #{$steel-600};
+  --acc-txt: #{$steel-700};
+  --acc-deep:#{$steel-500};
+  --acc-tint: rgba(65, 97, 128, 0.14);
+
+  --glass-a: rgba(255, 255, 255, 0.72);
+  --glass-b: rgba(255, 255, 255, 0.34);
+
+  --edge:      rgba(255, 255, 255, 0.9);
+  --inner:     rgba(255, 255, 255, 0.95);
+  --drop:      0 26px 50px -30px rgba(29, 45, 61, 0.34);
+  --drop-lg:   0 40px 80px -40px rgba(29, 45, 61, 0.42);
+  --rule:      rgba(20, 32, 44, 0.16);
+  --chip:      rgba(20, 32, 44, 0.06);
+  --chip-edge: rgba(20, 32, 44, 0.14);
+  --inset:     rgba(255, 255, 255, 0.46);
+  --plate:     rgba(255, 255, 255, 0.96);
+  --field-op:  0.42;
+  --scrim:     rgba(120, 140, 160, 0.55);
 }

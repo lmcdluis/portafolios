@@ -4,6 +4,7 @@ import GlassPanel from '../glass/GlassPanel';
 import Reveal from '../motion/Reveal';
 import { useLang } from '../../i18n/LangContext';
 
+// the steel ramp the whole page is built from
 const ramp = ['#1d2d3d', '#2c455d', '#416180', '#5980a6', '#749dc4', '#94bce3', '#b5d9fd'];
 
 export const SystemSection: React.FC = () => {
@@ -13,11 +14,11 @@ export const SystemSection: React.FC = () => {
     <section id="sistema" className="py-5">
       <Container>
         <Reveal>
-          <GlassPanel variant="xl" specular className="p-5">
+          <GlassPanel specular className="p-5">
             <Row>
               <Col lg={5} className="mb-4 mb-lg-0">
                 <div className="kicker mb-2">03 · {t('system.kicker')}</div>
-                <h2 className="mb-3" style={{ fontSize: 'clamp(30px, 3.4vw, 44px)', letterSpacing: '-0.02em' }}>
+                <h2 className="mb-3" style={{ fontSize: 'clamp(30px, 3.4vw, 44px)', lineHeight: 1.02 }}>
                   {t('system.title')}
                 </h2>
                 <p className="text-dim">{t('system.p1')}</p>
@@ -46,10 +47,10 @@ export const SystemSection: React.FC = () => {
                     <GlassPanel variant="quiet" className="p-3 h-100">
                       <div className="label-xs mb-3">{t('system.components')}</div>
                       <div className="d-flex flex-column" style={{ gap: '0.5rem' }}>
-                        <span className="chip text-center" style={{ background: 'var(--steel-300)', color: 'var(--steel-900)', border: 0 }}>
+                        <span className="chip chip--on text-center">
                           {t('system.primary')}
                         </span>
-                        <span className="chip text-center">{t('system.secondary')}</span>
+                        <span className="chip">{t('system.secondary')}</span>
                       </div>
                     </GlassPanel>
                   </Col>

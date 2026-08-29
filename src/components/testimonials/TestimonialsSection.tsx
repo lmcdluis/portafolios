@@ -41,7 +41,7 @@ export const TestimonialsSection: React.FC = () => {
         <Reveal>
           <div className="mb-4">
             <div className="kicker mb-2">04 · {t('voices.kicker')}</div>
-            <h2 style={{ fontSize: 'clamp(34px, 4.2vw, 54px)', letterSpacing: '-0.02em' }}>{t('voices.title')}</h2>
+            <h2 style={{ fontSize: 'clamp(34px, 4.2vw, 54px)' }}>{t('voices.title')}</h2>
           </div>
         </Reveal>
         <Row>
@@ -50,7 +50,7 @@ export const TestimonialsSection: React.FC = () => {
               <Reveal delay={index * 60} className="h-100">
                 <GlassPanel className="h-100 p-4">
                   <blockquote className="mb-0">
-                    <div className="h1 text-primary mb-3" style={{ lineHeight: 0.6 }}>&ldquo;</div>
+                    <div className="h1 mb-3" style={{ lineHeight: 0.6, color: 'var(--acc)' }}>&ldquo;</div>
                     <p className="mb-4">{pick(item.quote)}</p>
                     <footer className="label-xs">{t('voices.attribution')}</footer>
                   </blockquote>

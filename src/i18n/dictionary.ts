@@ -33,6 +33,31 @@ export const dictionary: Record<string, Entry> = {
   'work.filter.all': { es: 'Todos', en: 'All' },
   'work.filter.movil': { es: 'Móvil', en: 'Mobile' },
   'work.filter.web': { es: 'Web', en: 'Web' },
+  'work.tech':       { es: 'Tecnología', en: 'Technology' },
+  'work.clear':      { es: 'Limpiar', en: 'Clear' },
+  'work.empty':      { es: 'Ningún proyecto coincide con esos filtros.', en: 'No projects match those filters.' },
+  'work.viewcase':   { es: 'Ver caso', en: 'View case' },
+  'work.count.one':  { es: 'proyecto', en: 'project' },
+  'work.count.many': { es: 'proyectos', en: 'projects' },
+
+  'case.label':      { es: 'Caso', en: 'Case' },
+  'case.zoom':       { es: 'Clic para acercar', en: 'Click to zoom' },
+  'case.close':      { es: 'Cerrar', en: 'Close' },
+  'case.pending.h':  { es: 'Caso en preparación', en: 'Case study in progress' },
+  'case.pending.cta':{ es: 'Pregúntame por este proyecto →', en: 'Ask me about this project →' },
+
+  'form.err.name':   { es: 'Escribe tu nombre.', en: 'Please enter your name.' },
+  'form.err.email':  { es: 'Necesito un email para responderte.', en: 'I need an email to reply to you.' },
+  'form.err.emailBad': { es: 'Ese email no parece válido.', en: "That email doesn't look valid." },
+  'form.err.message':{ es: 'Cuéntame algo del proyecto — dos líneas bastan.', en: 'Tell me something about the project — two lines is enough.' },
+  'form.sending':    { es: 'Enviando…', en: 'Sending…' },
+  'form.sent':       { es: 'Enviado', en: 'Sent' },
+  'form.success':    {
+    es: 'Mensaje listo. Se abrió tu cliente de correo con todo escrito — solo dale enviar.',
+    en: 'Message ready. Your mail client opened with everything written — just hit send.'
+  },
+
+  'theme.toggle':    { es: 'Cambiar tema', en: 'Toggle theme' },
 
   'skills.kicker':   { es: 'Capacidades', en: 'Capabilities' },
   'skills.title':    { es: 'DOS OFICIOS, UNA CABEZA', en: 'TWO CRAFTS, ONE HEAD' },
@@ -74,9 +99,6 @@ export const dictionary: Record<string, Entry> = {
   'contact.project': { es: 'El proyecto', en: 'The project' },
   'contact.project.ph': { es: 'Dos líneas bastan.', en: 'Two lines are enough.' },
   'contact.send':    { es: 'Enviar mensaje', en: 'Send message' },
-  'contact.sending': { es: 'Enviando…', en: 'Sending…' },
-  'contact.success': { es: '¡Mensaje enviado! Te responderé pronto.', en: 'Message sent! I will reply soon.' },
-  'contact.error':   { es: 'Algo falló. Intenta de nuevo o escríbeme directo.', en: 'Something failed. Try again or email me directly.' },
 
   'footer.portfolio':{ es: 'Portafolio', en: 'Portfolio' },
   'footer.made':     { es: 'Diseñado en Figma, construido en React + Bootstrap.', en: 'Designed in Figma, built in React + Bootstrap.' }

@@ -10,32 +10,39 @@ const stack = ['React', 'Bootstrap', 'TypeScript', 'Sass', 'Figma', 'Adobe XD', 
 export const Hero: React.FC = () => {
   const { t } = useLang();
 
+  const stats = [
+    { value: 13, suffix: '+', label: t('hero.stat.years') },
+    { value: 9, suffix: '', label: t('hero.stat.ships') },
+    { value: 2, suffix: '', label: t('hero.stat.geos') }
+  ];
+
   return (
     <section id="top" className="pt-5 pb-4">
       <Container>
         <Row className="align-items-stretch">
           <Col lg={8} className="mb-4">
             <Reveal>
-              <GlassPanel variant="xl" specular className="h-100 p-5">
+              <GlassPanel specular className="h-100 p-5">
                 <div className="d-flex align-items-center mb-4" style={{ gap: '0.625rem' }}>
                   <span
                     style={{
                       width: 8,
                       height: 8,
                       borderRadius: '50%',
-                      background: 'var(--steel-300)',
-                      boxShadow: '0 0 14px rgba(148,188,227,.9)'
+                      background: 'var(--acc)',
+                      boxShadow: '0 0 14px var(--acc)'
                     }}
                   />
                   <span className="kicker">{t('hero.location')}</span>
                 </div>
 
-                <h1 className="mb-4" style={{ fontSize: 'clamp(44px, 5.6vw, 74px)', letterSpacing: '-0.02em' }}>
+                <h1 className="mb-4" style={{ fontSize: 'clamp(44px, 5.6vw, 74px)', lineHeight: 0.96 }}>
                   {t('hero.title.1')}
                   <br />
                   {t('hero.title.2')}
                   <br />
-                  <span className="text-primary">{t('hero.title.3')}</span>
+                  {/* the one place the full accent runs at display size */}
+                  <span style={{ color: 'var(--acc)' }}>{t('hero.title.3')}</span>
                 </h1>
 
                 <p className="text-dim mb-3" style={{ fontSize: '1.0625rem', maxWidth: '56ch' }}>
@@ -46,10 +53,10 @@ export const Hero: React.FC = () => {
                 </p>
 
                 <div className="d-flex flex-wrap" style={{ gap: '0.875rem' }}>
-                  <a href="#trabajo" className="btn btn-glass-primary btn-lg">
+                  <a href="#trabajo" className="btn btn-accent btn-lg" data-magnet>
                     {t('hero.cta.work')}
                   </a>
-                  <a href="/cv-luis-carazo.pdf" download className="btn btn-glass-ghost btn-lg">
+                  <a href="/cv-luis-carazo.pdf" download className="btn btn-outline-ink btn-lg" data-magnet>
                     {t('hero.cta.cv')}
                   </a>
                 </div>
@@ -60,11 +67,7 @@ export const Hero: React.FC = () => {
           <Col lg={4}>
             <Reveal delay={140} className="h-100">
               <Row noGutters style={{ margin: '-0.4375rem' }}>
-                {[
-                  { value: 13, suffix: '+', label: t('hero.stat.years') },
-                  { value: 9, suffix: '', label: t('hero.stat.ships') },
-                  { value: 2, suffix: '', label: t('hero.stat.geos') }
-                ].map((stat) => (
+                {stats.map((stat) => (
                   <Col xs={6} key={stat.label} style={{ padding: '0.4375rem' }}>
                     <GlassPanel className="h-100 p-3">
                       <div className="h1 mb-2" style={{ fontSize: '2.625rem' }}>
@@ -89,9 +92,7 @@ export const Hero: React.FC = () => {
                     <div className="kicker mb-3">Stack</div>
                     <div className="d-flex flex-wrap" style={{ gap: '0.5rem' }}>
                       {stack.map((item) => (
-                        <span key={item} className="chip">
-                          {item}
-                        </span>
+                        <span key={item} className="chip">{item}</span>
                       ))}
                     </div>
                   </GlassPanel>

@@ -2,22 +2,22 @@ import React from 'react';
 import useSpecular from '../../hooks/useSpecular';
 
 export interface GlassPanelProps {
-  /** Rounded pill, extra-large radius, tinted, or a flat inner plate. */
-  variant?: 'default' | 'pill' | 'xl' | 'tint' | 'quiet';
-  /** Adds the pointer-tracking specular highlight. */
+  /** tint = accent-washed plate, quiet = flat inner plate (no blur). */
+  variant?: 'default' | 'tint' | 'quiet';
+  /** Adds the pointer-tracked specular highlight. */
   specular?: boolean;
-  /** Adds the hover lift used by project cards. */
+  /** Adds the hover lift + accent edge used by project cards. */
   lift?: boolean;
+  as?: 'div' | 'article' | 'blockquote';
   className?: string;
   style?: React.CSSProperties;
   id?: string;
   children?: React.ReactNode;
+  [key: string]: unknown;
 }
 
 const variantClass: Record<string, string> = {
   default: '',
-  pill: 'glass--pill',
-  xl: 'glass--xl',
   tint: 'glass--tint',
   quiet: 'glass--quiet'
 };
@@ -26,10 +26,10 @@ export const GlassPanel: React.FC<GlassPanelProps> = ({
   variant = 'default',
   specular = false,
   lift = false,
+  as: Tag = 'div',
   className = '',
-  style,
-  id,
-  children
+  children,
+  ...rest
 }) => {
   const ref = useSpecular<HTMLDivElement>(specular);
   const classes = ['glass', variantClass[variant], lift ? 'glass-lift' : '', className]
@@ -37,10 +37,10 @@ export const GlassPanel: React.FC<GlassPanelProps> = ({
     .join(' ');
 
   return (
-    <div ref={ref} id={id} className={classes} style={style}>
+    <Tag ref={ref as never} className={classes} {...rest}>
       {specular && <span className="glass__specular" aria-hidden="true" />}
       {specular ? <div className="glass__body">{children}</div> : children}
-    </div>
+    </Tag>
   );
 };
 

@@ -28,7 +28,7 @@ export const SkillsSection: React.FC = () => {
         <Reveal>
           <div className="mb-4">
             <div className="kicker mb-2">02 · {t('skills.kicker')}</div>
-            <h2 style={{ fontSize: 'clamp(34px, 4.2vw, 54px)', letterSpacing: '-0.02em' }}>{t('skills.title')}</h2>
+            <h2 style={{ fontSize: 'clamp(34px, 4.2vw, 54px)' }}>{t('skills.title')}</h2>
           </div>
         </Reveal>
 
