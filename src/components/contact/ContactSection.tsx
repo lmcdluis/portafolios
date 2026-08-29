@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useRef, useState } from 'react';
 import { Col, Container, Row } from 'react-bootstrap';
 import GlassPanel from '../glass/GlassPanel';
 import Reveal from '../motion/Reveal';
@@ -7,20 +7,54 @@ import { useLang } from '../../i18n/LangContext';
 const EMAIL = 'carazodesign@gmail.com';
 const LINKEDIN = 'https://www.linkedin.com/in/luis-manuel-carazo-d%C3%A1vila-80a6a0153/';
 const GITHUB = 'https://github.com/lmcdluis';
+const WEB3FORMS_ACCESS_KEY = 'f30fba89-88fc-4b9b-9ab6-07a6c1034bdd';
+
+type Status = 'idle' | 'sending' | 'success' | 'error';
 
 export const ContactSection: React.FC = () => {
   const { t } = useLang();
   const [form, setForm] = useState({ name: '', email: '', message: '' });
+  const [status, setStatus] = useState<Status>('idle');
+  const honeypot = useRef<HTMLInputElement>(null);
 
   const change = (field: keyof typeof form) => (event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) =>
     setForm({ ...form, [field]: event.target.value });
 
-  // No backend in this repo: hand the message to the user's mail client.
-  const submit = (event: React.FormEvent) => {
+  const submit = async (event: React.FormEvent) => {
     event.preventDefault();
-    const subject = encodeURIComponent('Portafolio · ' + (form.name || 'Nuevo mensaje'));
-    const body = encodeURIComponent(form.message + '\n\n' + form.name + ' — ' + form.email);
-    window.location.href = 'mailto:' + EMAIL + '?subject=' + subject + '&body=' + body;
+
+    // Honeypot: real visitors never fill this hidden field. If it has a
+    // value, a bot did — fake success without spending a Web3Forms send.
+    if (honeypot.current?.value) {
+      setStatus('success');
+      setForm({ name: '', email: '', message: '' });
+      return;
+    }
+
+    setStatus('sending');
+    try {
+      const response = await fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+        body: JSON.stringify({
+          access_key: WEB3FORMS_ACCESS_KEY,
+          subject: 'Portafolio · ' + (form.name || 'Nuevo mensaje'),
+          from_name: form.name,
+          name: form.name,
+          email: form.email,
+          message: form.message
+        })
+      });
+      const result = await response.json();
+      if (result.success) {
+        setStatus('success');
+        setForm({ name: '', email: '', message: '' });
+      } else {
+        setStatus('error');
+      }
+    } catch {
+      setStatus('error');
+    }
   };
 
   return (
@@ -61,6 +95,15 @@ export const ContactSection: React.FC = () => {
                 style={{ borderLeft: '1px solid rgba(255,255,255,.16)', background: 'rgba(13,21,28,.22)' }}
               >
                 <form onSubmit={submit}>
+                  <input
+                    ref={honeypot}
+                    type="text"
+                    name="botcheck"
+                    tabIndex={-1}
+                    autoComplete="off"
+                    aria-hidden="true"
+                    style={{ position: 'absolute', left: '-9999px', width: 1, height: 1, opacity: 0 }}
+                  />
                   <div className="mb-3">
                     <label className="label-xs d-block mb-2" htmlFor="contact-name">{t('contact.name')}</label>
                     <input
@@ -97,9 +140,20 @@ export const ContactSection: React.FC = () => {
                       required
                     />
                   </div>
-                  <button type="submit" className="btn btn-glass-light btn-block btn-lg">
-                    {t('contact.send')}
+                  <button
+                    type="submit"
+                    className="btn btn-glass-light btn-block btn-lg"
+                    disabled={status === 'sending'}
+                  >
+                    {status === 'sending' ? t('contact.sending') : t('contact.send')}
                   </button>
+
+                  {status === 'success' && (
+                    <p className="mt-3 mb-0" role="status">{t('contact.success')}</p>
+                  )}
+                  {status === 'error' && (
+                    <p className="mt-3 mb-0" role="alert">{t('contact.error')}</p>
+                  )}
                 </form>
               </Col>
             </Row>
