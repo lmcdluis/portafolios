@@ -9,7 +9,17 @@
 /coverage
 
 # production
-#/build
+/build
+/asset-manifest.json
+/favicon.ico
+/favicon.png
+/index.html
+/logo192.png
+/logo512.png
+/manifest.json
+/projects
+/robots.txt
+/static
 
 # misc
 .DS_Store

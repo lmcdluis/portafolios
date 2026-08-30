@@ -5,6 +5,7 @@ import ThemeToggle from './ThemeToggle';
 import { useLang } from '../../i18n/LangContext';
 import useScrollSpy from '../../hooks/useScrollSpy';
 import { Lang } from '../../i18n/dictionary';
+import logo from '../../assets/images/projects/favicon.png'
 
 const links = [
   { id: 'trabajo', key: 'nav.work' },
@@ -24,9 +25,8 @@ export const NavBar: React.FC = () => {
     <header className="site-nav">
       <Container>
         <GlassPanel className="site-nav__bar">
-          <a href="#top" className="site-nav__brand" data-magnet>
-            <span className="h4 mb-0">LUIS CARAZO</span>
-            <span className="kicker site-nav__brand-kicker">UI/UX · FRONT-END</span>
+          <a href="#top" className="site-nav__brand" data-magnet aria-label="Go to top">
+            <img src={logo} className="site-nav__brand-logo" height="50" width="50" alt="Luis Carazo || UI/UX Developer || Wordpress Specialist" />
           </a>
 
           <nav className="site-nav__links">
