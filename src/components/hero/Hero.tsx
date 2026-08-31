@@ -33,7 +33,7 @@ export const Hero: React.FC = () => {
                       boxShadow: '0 0 14px var(--acc)'
                     }}
                   />
-                  <span className="kicker">{t('hero.location')}</span>
+                  <span className="kicker">Luis Carazo Davila</span>
                 </div>
 
                 <h1 className="mb-4" style={{ fontSize: 'clamp(44px, 5.6vw, 74px)', lineHeight: 0.96 }}>
