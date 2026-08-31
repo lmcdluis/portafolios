@@ -1,14 +1,14 @@
 {
   "files": {
-    "main.css": "/portafolios/static/css/main.6373d2df.chunk.css",
-    "main.js": "/portafolios/static/js/main.bd01c24c.chunk.js",
-    "main.js.map": "/portafolios/static/js/main.bd01c24c.chunk.js.map",
+    "main.css": "/portafolios/static/css/main.ba03d746.chunk.css",
+    "main.js": "/portafolios/static/js/main.e36c185c.chunk.js",
+    "main.js.map": "/portafolios/static/js/main.e36c185c.chunk.js.map",
     "runtime-main.js": "/portafolios/static/js/runtime-main.d7834e31.js",
     "runtime-main.js.map": "/portafolios/static/js/runtime-main.d7834e31.js.map",
     "static/js/2.036062cc.chunk.js": "/portafolios/static/js/2.036062cc.chunk.js",
     "static/js/2.036062cc.chunk.js.map": "/portafolios/static/js/2.036062cc.chunk.js.map",
     "index.html": "/portafolios/index.html",
-    "static/css/main.6373d2df.chunk.css.map": "/portafolios/static/css/main.6373d2df.chunk.css.map",
+    "static/css/main.ba03d746.chunk.css.map": "/portafolios/static/css/main.ba03d746.chunk.css.map",
     "static/js/2.036062cc.chunk.js.LICENSE.txt": "/portafolios/static/js/2.036062cc.chunk.js.LICENSE.txt",
     "static/media/alta-bms.002672af.png": "/portafolios/static/media/alta-bms.002672af.png",
     "static/media/cashmax-mobile-all.9cccbfbd.png": "/portafolios/static/media/cashmax-mobile-all.9cccbfbd.png",
@@ -24,7 +24,7 @@
   "entrypoints": [
     "static/js/runtime-main.d7834e31.js",
     "static/js/2.036062cc.chunk.js",
-    "static/css/main.6373d2df.chunk.css",
-    "static/js/main.bd01c24c.chunk.js"
+    "static/css/main.ba03d746.chunk.css",
+    "static/js/main.e36c185c.chunk.js"
   ]
 }
