@@ -39,7 +39,7 @@ export const ProjectsSection: React.FC = () => {
         <Reveal>
           <div className="d-flex flex-wrap align-items-end justify-content-between mb-4" style={{ gap: '1.5rem' }}>
             <div>
-              <div className="kicker mb-2">01 · {t('work.kicker')}</div>
+              <div className="kicker mb-2">{t('work.kicker')}</div>
               <h2 style={{ fontSize: 'clamp(34px, 4.2vw, 54px)' }}>{t('work.title')}</h2>
             </div>
             <div className="switch" role="group" aria-label={t('work.kicker')}>

@@ -57,7 +57,7 @@ export const ContactSection: React.FC = () => {
     // No backend in this repo: hand the composed message to the mail client.
     window.setTimeout(() => {
       const subject = encodeURIComponent('Portafolio · ' + form.name);
-      const body = encodeURIComponent(`${form.message}\n\n— ${form.name} (${form.email})`);
+      const body = encodeURIComponent(`${form.message}\n\nEnviado por ${form.name} (${form.email})`);
       window.location.href = `mailto:${EMAIL}?subject=${subject}&body=${body}`;
       setState('sent');
     }, 900);
@@ -83,7 +83,7 @@ export const ContactSection: React.FC = () => {
           <GlassPanel variant="tint" specular>
             <Row noGutters>
               <Col lg={6} className="p-5">
-                <div className="kicker mb-3">05 · {t('contact.kicker')}</div>
+                <div className="kicker mb-3">{t('contact.kicker')}</div>
                 <h2 className="mb-3" style={{ fontSize: 'clamp(32px, 3.6vw, 48px)' }}>{t('contact.title')}</h2>
                 <p className="text-dim mb-4" style={{ maxWidth: '46ch' }}>{t('contact.lead')}</p>
 

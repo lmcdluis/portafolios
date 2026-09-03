@@ -60,9 +60,9 @@ $grid-gutter-width:       1.5rem;
   --acc-tint: rgba(89, 128, 166, 0.2);
 
   // the glass material
-  --glass-a: rgba(255, 255, 255, 0.04);
-  --glass-b: rgba(255, 255, 255, 0.02);
-  --glass-blur: 28px;
+  --glass-a: rgba(255, 255, 255, 0.025);
+  --glass-b: rgba(255, 255, 255, 0.01);
+  --glass-blur: 20px;
   --glass-sat: 1.8;
 
   --edge:      rgba(255, 255, 255, 0.18);
@@ -92,8 +92,8 @@ $grid-gutter-width:       1.5rem;
   --acc-deep:#{$steel-500};
   --acc-tint: rgba(65, 97, 128, 0.14);
 
-  --glass-a: rgba(255, 255, 255, 0.42);
-  --glass-b: rgba(255, 255, 255, 0.16);
+  --glass-a: rgba(255, 255, 255, 0.30);
+  --glass-b: rgba(255, 255, 255, 0.10);
 
   --edge:      rgba(255, 255, 255, 0.9);
   --inner:     rgba(255, 255, 255, 0.95);

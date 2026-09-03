@@ -49,7 +49,7 @@ export const dictionary: Record<string, Entry> = {
   'form.err.name':   { es: 'Escribe tu nombre.', en: 'Please enter your name.' },
   'form.err.email':  { es: 'Necesito un email para responderte.', en: 'I need an email to reply to you.' },
   'form.err.emailBad': { es: 'Ese email no parece válido.', en: "That email doesn't look valid." },
-  'form.err.message':{ es: 'Cuéntame algo del proyecto — dos líneas bastan.', en: 'Tell me something about the project — two lines is enough.' },
+  'form.err.message':{ es: 'Cuéntame algo del proyecto. Dos líneas bastan.', en: 'Tell me something about the project. Two lines is enough.' },
   'form.sending':    { es: 'Enviando…', en: 'Sending…' },
   'form.sent':       { es: 'Enviado', en: 'Sent' },
   'form.success':    {

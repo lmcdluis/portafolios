@@ -17,7 +17,7 @@ export const SystemSection: React.FC = () => {
           <GlassPanel specular className="p-5">
             <Row>
               <Col lg={5} className="mb-4 mb-lg-0">
-                <div className="kicker mb-2">03 · {t('system.kicker')}</div>
+                <div className="kicker mb-2">{t('system.kicker')}</div>
                 <h2 className="mb-3" style={{ fontSize: 'clamp(30px, 3.4vw, 44px)', lineHeight: 1.02 }}>
                   {t('system.title')}
                 </h2>

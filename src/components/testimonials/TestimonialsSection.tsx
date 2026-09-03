@@ -40,7 +40,7 @@ export const TestimonialsSection: React.FC = () => {
       <Container>
         <Reveal>
           <div className="mb-4">
-            <div className="kicker mb-2">04 · {t('voices.kicker')}</div>
+            <div className="kicker mb-2">{t('voices.kicker')}</div>
             <h2 style={{ fontSize: 'clamp(34px, 4.2vw, 54px)' }}>{t('voices.title')}</h2>
           </div>
         </Reveal>
